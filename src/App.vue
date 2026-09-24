@@ -4,7 +4,7 @@ import Faq from "./components/faq/Faq.vue";
 import Footer from "./components/footer/Footer.vue";
 import Navbar from "./components/navbar/Navbar.vue";
 import Services from "./components/services/Services.vue";
-import ServicesCoverflow from "./components/services/ServicesCoverflow.vue";
+import FeaturesCover from "./components/features/FeaturesCover.vue";
 import TopStore from "./components/topStore/TopStore.vue";
 </script>
 
@@ -14,7 +14,7 @@ import TopStore from "./components/topStore/TopStore.vue";
     <Banner />
     <Services />
     <TopStore />
-    <ServicesCoverflow />
+    <FeaturesCover />
     <Faq />
     <Footer />
   </section>

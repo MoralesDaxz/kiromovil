@@ -10,15 +10,15 @@ const toggleFaq = (id) => {
 };
 </script>
 <template>
-  <section class="max-w-4xl mx-auto px-4 text-slate-100 mt-20">
+  <section class="relative mt-10 max-w-4xl mx-auto px-4 text-slate-100 mt-20">
     <!-- Encabezado de la Sección -->
-    <div class="text-center mb-10">
-      <h2 class="py-20 text-center text-3xl sm:text-4xl md:text-5xl font-bold">
+    <div >
+      <h2 class="py-24 text-center text-3xl sm:text-4xl md:text-5xl font-bold">
         Preguntas frecuentes
       </h2>
-      <p class="mt-3 text-slate-400">
-        Resuelve tus dudas sobre compatibilidad, instalación, garantías y
-        envíos.
+      <p class="text-slate-400 text-center italic pb-4">
+        "Resuelve tus dudas sobre compatibilidad, instalación, garantías y
+        envíos"
       </p>
     </div>
 

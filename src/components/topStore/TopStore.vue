@@ -1,119 +1,41 @@
-<script setup></script>
+<!-- TopStore.vue -->
+<script setup>
+import { useCatalogo } from "../../../composables/useCatalogo";
+import CardMovil from "./CardMovil.vue";
+import SkeletonCard from "./SkeletonCard.vue";
+
+const { productos, cargando, error } = useCatalogo();
+</script>
 
 <template>
-  <section class="mt-20">
-    <h2 class="py-20 text-center text-3xl sm:text-4xl md:text-5xl font-bold">
-      Novedad en articulos
+  <section class="mt-10 flex flex-col items-center">
+    <h2 class="py-24 text-center text-3xl sm:text-4xl md:text-5xl font-bold">
+      Novedad en artículos
     </h2>
-    <article class="flex justify-around px-10 flex-wrap">
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet veletur adipisicing elit. Numquam exercitationem
-          amet velit beatae libero, eum reprehenderit laborum. Eius omnis ipsum
-          iure mollitia provident, nisi ad, autem non, maxime nulla cupiditate.
-        </p>
-      </div>
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provideni ad, autem non, maxime nulla
-          cupiditate. Lorem amet velit beatae libero, eum reprehenderit laborum.
-        </p>
-      </div>
-      <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-         <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-         <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-         <div class="w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
-        <span>✅</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          exercitationem amet velit beatae libero, eum reprehenderit laborum.
-          Eius omnis ipsum iure mollitia provident, nisi ad, autem non, maxime
-          nulla cupiditate.
-        </p>
-      </div>
-    </article>
+
+    <!-- 1. Estado de Carga: Muestra 8 tarjetas Skeleton parpadeando -->
+    <div
+      v-if="cargando"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4"
+    >
+      <SkeletonCard v-for="n in 8" :key="n" />
+    </div>
+
+    <!-- 2. Estado de Error -->
+    <div v-else-if="error" class="text-center py-10 text-red-500 font-semibold">
+      {{ error }}
+    </div>
+
+    <!-- 3. Estado Cargado: Muestra los productos reales -->
+    <div
+      v-else
+      class="max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4 "
+    >
+      <CardMovil
+        v-for="item in productos"
+        :key="item?.data?.id"
+        :movil="item?.data"
+      />
+    </div>
   </section>
 </template>

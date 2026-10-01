@@ -8,7 +8,7 @@ const { productos, cargando, error } = useCatalogo();
 </script>
 
 <template>
-  <section class="mt-10 flex flex-col items-center">
+  <section class="flex flex-col items-center">
     <h2 class="py-24 text-center text-3xl sm:text-4xl md:text-5xl font-bold">
       Novedad en artículos
     </h2>
@@ -16,7 +16,7 @@ const { productos, cargando, error } = useCatalogo();
     <!-- 1. Estado de Carga: Muestra 8 tarjetas Skeleton parpadeando -->
     <div
       v-if="cargando"
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 sm:gap-6 px-4"
     >
       <SkeletonCard v-for="n in 8" :key="n" />
     </div>

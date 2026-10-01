@@ -4,7 +4,10 @@
 @import "@fontsource-variable/geist";
 
 .legend {
+  color: #0a2449c9;
+  color: #000408f3;
   color: #2b7fff;
+  color: #a921b6c5;
 }
 :root {
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -48,9 +51,8 @@ button {
   top: 0;
   width: 130%;
   height: 100%;
- &{@media( width >= 1300px ){
-   background-position: 10% 72%; /*Primer valor eje X /  segundo valor eje Y */
+&{@media( width >= 1300px ){
+   background-position: 10% 20%; /*Primer valor eje X /  segundo valor eje Y */
 }}
-
 
 }

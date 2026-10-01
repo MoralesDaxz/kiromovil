@@ -55,6 +55,7 @@ const modules = [
         :navigation="true"
         :pagination="{ clickable: true }"
         :modules="modules"
+
         class="w-full h-auto py-8"
       >
         <swiper-slide
@@ -89,5 +90,16 @@ const modules = [
 /* Evita que los slides cambien su ancho cuando swiper calcula el 'auto' */
 .swiper-slide {
   flex-shrink: 0;
+}
+:deep(.swiper-button-next),
+:deep(.swiper-button-prev) {
+  color: #a0b3cfce; /* Tu color personalizado en HEX, RGB o clase */
+  transition: color ease-in .3s;
+}
+
+/* Opcional: Para cambiar el color al pasar el cursor */
+:deep(.swiper-button-next:hover),
+:deep(.swiper-button-prev:hover) {
+  color: #17489298;
 }
 </style>

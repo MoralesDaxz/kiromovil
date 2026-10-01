@@ -10,24 +10,21 @@ import { cases } from "../../../../util/frecuentCases";
 
 const modules = [Parallax, Navigation, Autoplay];
 const { contentSwiper, boxArticle, title, subtitle, prf } = {
-  contentSwiper: "place-content-center backdrop-brightness-75",
+  contentSwiper: "place-content-center backdrop-brightness-75", //text-3xl sm:text-4xl md:text-5xl font-bold
   boxArticle: "px-20 md:px-40 md:pb-8 flex flex-col gap-8",
-  title: "text-3xl font-bold",
-  subtitle: "text-xl font-medium",
-  prf: "text-base",
+  title: "text-3xl sm:text-4xl md:text-5xl font-bold font-bold",
+  subtitle: " text-xl sm:text-2xl font-medium",
+  prf: "text-base sm:text-lg lg:w-[50%]",
 };
 </script>
 
 <template>
   <swiper
-    :autoplay="{delay: 4000}"
-    :style="{
-      '--swiper-navigation-color': '#000',
-      '--swiper-pagination-color': '#fff',
-    }"
+    :autoplay="{ delay: 4000 }"
     :speed="600"
     :parallax="true"
     :modules="modules"
+    :navigation="true"
     class="mySwiper h-[450px]"
   >
     <div
@@ -50,3 +47,16 @@ const { contentSwiper, boxArticle, title, subtitle, prf } = {
     </swiper-slide>
   </swiper>
 </template>
+<style scoped>
+:deep(.swiper-button-next),
+:deep(.swiper-button-prev) {
+  color: #a0b3cfce; /* Tu color personalizado en HEX, RGB o clase */
+  transition: color ease-in 0.3s;
+}
+
+/* Opcional: Para cambiar el color al pasar el cursor */
+:deep(.swiper-button-next:hover),
+:deep(.swiper-button-prev:hover) {
+  color: #17489298;
+}
+</style>

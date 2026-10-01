@@ -30,7 +30,7 @@ watch(() => props.movil?.images, (nuevasImagenes) => {
         <div v-else class="text-gray-400 text-sm font-medium">Sin imagen disponible</div>
 
         <!-- Tag de la marca -->
-        <span class="absolute top-3 left-3 bg-black/90 backdrop-blur-sm text-gray-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm border border-gray-500 capitalize tracking-wider">
+        <span class="absolute top-2 left-1 bg-black/90 backdrop-blur-sm text-gray-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm border border-gray-500 capitalize tracking-wider">
           {{ movil.brand }}
         </span>
       </div>

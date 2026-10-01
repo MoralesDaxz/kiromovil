@@ -1,6 +1,8 @@
 <script setup>
 import { motion, AnimatePresence } from "motion-v";
 import { ref } from "vue";
+import BuscadorCatalogo from "./BuscadorCatalogo.vue";
+import { useCatalogo } from "../../../composables/useCatalogo.js";
 
 const isMenuOpen = ref(false);
 const searchQuery = ref("");
@@ -15,11 +17,16 @@ const navLinks = [
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
+const { productos } = useCatalogo();
+const handleSeleccion = (producto) => {
+  // Aquí puedes abrir un modal con el detalle del producto o hacer scroll hacia él
+  console.log("Producto seleccionado:", producto);
+};
 </script>
 
 <template>
   <header
-    class="fixed w-full top-0 z-50 bg-gray-900 border-b border-gray-800 text-white"
+    class="sticky w-full top-0 z-50 bg-gray-900 border-b border-gray-800 text-white"
   >
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 gap-4">
@@ -49,28 +56,8 @@ const toggleMenu = () => {
 
         <!-- 3. Buscador (Escritorio) -->
         <div class="hidden md:flex flex-1 max-w-md mx-4">
-          <div class="relative w-full">
-            <input
-              v-model="searchQuery"
-              type="text"
-              placeholder="Buscar productos o servicios..."
-              class="w-full pl-10 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-            />
-            <svg
-              class="absolute left-3 top-2.5 h-4 w-4 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
-        </div>
+    <BuscadorCatalogo :productos="productos" @seleccionar="handleSeleccion" />
+  </div>
 
         <!-- 4. Botón Menú Hamburguesa (Móvil) -->
         <div class="flex md:hidden items-center">
@@ -118,18 +105,18 @@ const toggleMenu = () => {
             type: 'spring',
             bounce: 0.25 /* Controla la intensidad del rebote (0.3 a 0.5 es ideal) */,
             duration: 0.6,
-            // stiffness: 300, // Rigidez del resorte
-            // damping: 18     // Amortiguación (a menor número, más rebota)
+           //stiffness: 100, // Rigidez del resorte
+            //damping: 10     // Amortiguación (a menor número, más rebota)
           },
           opacity: {
             duration: 0.2,
             ease: 'easeOut',
           },
         }"
-        class="md:hidden bg-gray-900 border-b border-gray-800 px-4 pt-2 pb-4 space-y-3 overflow-hidden"
+        class="md:hidden bg-gray-900 border-b border-gray-800 px-4  space-y-3 overflow-hidden"
       >
         <!-- Buscador Móvil -->
-        <div class="relative w-full pt-1">
+        <div class="relative w-full">
           <input
             v-model="searchQuery"
             type="text"
